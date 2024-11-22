@@ -1,4 +1,8 @@
 # GT03
+
+Link para o material complementar: https://dust-starburst-c57.notion.site/Desenvolvimento-Back-End-JavaScript-5038d9fff41d45688f698f7d88a5a19e
+
+
 # Projeto: API de Livros
 
 ## Descrição
