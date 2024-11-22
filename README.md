@@ -35,7 +35,7 @@ const livros = {
     "resumo": "Uma reflexão sobre um futuro totalitário."
   }
 };
-
+```
 # Endpoints da API de Livros
 
 ## **1. Listar todos os livros**
