@@ -1,4 +1,4 @@
-# AULA02 - Desenvolvimento de uma API com Express
+# AULA01 - Desenvolvimento de uma API com Express
 
 ## Descrição da Aula
 Nesta aula, criaremos as rotas da API simples utilizando o framework **Express** no Node.js. O objetivo principal foi desenvolver endpoints básicos para gerenciar uma coleção de livros, para criar novos livros (post), atualizar livros existentes(put) e deletar  livros (delete).
