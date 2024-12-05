@@ -25,7 +25,6 @@ app.get('/',(requisicao, resposta)=>{
     resposta.end()
 })
 
-
 app.get('/v1/livros', (req , res)=>{
     console.log('Chamada get na rota /v1/livros')
     let chaves = Object.keys(livros) 
@@ -44,7 +43,6 @@ app.get('/v1/livros', (req , res)=>{
     
 })
 
-
 app.get('/v1/livros/:id', (req, res)=>{
     console.log(`Chamada get na rota /v1/livros/:${req.params.id}`)
 
@@ -62,7 +60,6 @@ app.get('/v1/livros/:id', (req, res)=>{
         res.end()
     }
 })
-
 
 app.post('/v1/livros', (req, res)=>{
     // lógica para acessar as informações passadas no corpo da requisição
@@ -97,6 +94,65 @@ app.post('/v1/livros', (req, res)=>{
 })
 
 app.delete('/v1/livros/:id', (req, res)=>{
+    console.log(`Chamada delete na rota /v1/livros/:${req.params.id}`)
+    let idsLivros = Object.keys(livros)
+    let idLivro = req.params.id
+
+    if(!idsLivros.includes(idLivro)){
+        res.status(404)
+        res.json({erro: 'id inexistente'})
+        res.end()
+    }
+   
+    delete livros[idLivro] //deleta uma chave de um objeto
+    res.status(200)
+    res.json({mensagem: 'livro deletado com sucesso'})
+    res.end()
+
+})
+//  correção em 15min :)
+app.put('/v1/livros/:id', (req, res)=>{
+    const idLivroAtualizar = req.params.id
+    const idsExistentes = Object.keys(livros)
+
+    // verificação se o id não existe no arry de chaves do objeto
+    if(!idsExistentes.includes(idLivroAtualizar)){
+        res.status(404).json({erro: 'id inexistente'})
+        res.end()
+    }
+
+    if(!req.body){
+        res.status(400).json({erro: 'é necessário informar os dados para atualizar o livro'})
+        res.end()
+    }
+    else{
+        const { titulo, autor, anoPublicacao, genero, resumo} = req.body
+        if(titulo){
+            livros[idLivroAtualizar].titulo = titulo
+        }
+        if(autor){
+            livros[idLivroAtualizar].autor = autor
+        }
+        if(anoPublicacao){
+            livros[idLivroAtualizar].anoPublicacao = anoPublicacao
+        }
+        if(genero){
+            livros[idLivroAtualizar].genero = genero
+        }
+        if(resumo){
+            livros[idLivroAtualizar].resumo = resumo
+        }
+        res.status(200).json({mensagem: 'livro atualizado com sucesso'})
+        res.end()
+    }
+
+
+
+    // caminho feliz da atualização
+    
+
+
+
 
 })
 
