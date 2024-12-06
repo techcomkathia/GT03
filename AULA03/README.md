@@ -24,13 +24,6 @@ Nesta aula, criaremos o banco de dados para nossa API de livros. Usando mysql e 
     - id_categoria (chave primária)
     - nome_categoria (varchar)
 
-
-
-
-
-
-
-
  - Livros:
     - id_livro (chave primária)
     - titulo (varchar)
