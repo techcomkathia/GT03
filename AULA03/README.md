@@ -1,4 +1,4 @@
-# AULA02 - Desenvolvimento de uma API com Express
+# AULA03 - Desenvolvimento de uma API com Express
 
 ## Descrição da Aula
 Nesta aula, criaremos o banco de dados para nossa API de livros. Usando mysql e Sequelize, iremos estruturar a persistência de dados no nosso banco. 
@@ -20,11 +20,12 @@ Nesta aula, criaremos o banco de dados para nossa API de livros. Usando mysql e 
     - ano_nasc
     - ano_falec
 
- - Categoria:
+ - Categorias:
     - id_categoria
     - nome_categoria
 
- - Livro:
+ - Livros:
+    - id_livro
     - titulo
     - id_autor
     - ano_publicacao
