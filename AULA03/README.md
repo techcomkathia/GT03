@@ -15,25 +15,33 @@ Nesta aula, criaremos o banco de dados para nossa API de livros. Usando mysql e 
 ### 2. Estruturação das tabelas
 #### 2.1 Criar as tabelas que representem:
  - Autores:
-    - id_autor
-    - nome 
-    - ano_nasc
-    - ano_falec
+    - id_autor (chave primária)
+    - nome (varchar não nulo)
+    - ano_nasc (ano, não nulo)
+    - ano_falec (ano)
 
  - Categorias:
-    - id_categoria
-    - nome_categoria
+    - id_categoria (chave primária)
+    - nome_categoria (varchar)
+
+
+
+
+
+
+
 
  - Livros:
-    - id_livro
-    - titulo
-    - id_autor
-    - ano_publicacao
-    - resumo 
+    - id_livro (chave primária)
+    - titulo (varchar)
+    - id_autor (int chave estrangeira)
+    - ano_publicacao (year)
+    - resumo (text)
 
 - Livros_categorias:
-    - id_livro
-    - id_categoria
+    - id_livro (chave estrangeira)
+    - id_categoria (chave estrangeira)
+    chave primária composta de chaves estrangeiras
 
 #### 2.2 Popular o Banco de dados
  Realizar o insert no banco de dados usando linguagem SQL
